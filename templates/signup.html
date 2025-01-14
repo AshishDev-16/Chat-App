@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .login-title {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .form-group label {
+            font-weight: 500;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+        .form-control {
+            border: 2px solid #e2e8f0;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+        button {
+            padding: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: #4299e1;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+        .link {
+            margin-top: 20px;
+        }
+        .link a {
+            color: #4299e1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .alert {
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .input-group-text {
+            border-right: 0;
+            background: transparent;
+        }
+        .input-group .form-control {
+            border-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if messages %}
+        <div class="container">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="login-container">
+            <h2 class="login-title">Create Account</h2>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Signup</button>
+            </form>
+            <div class="text-center link">
+                <a href="/">Already have an account? Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
