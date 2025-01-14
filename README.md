@@ -28,6 +28,7 @@ A real-time chat application built with Django and WebSocket technology, allowin
 
 bash
 git clone https://github.com/AshishDev-16/Chat-App.git
+
 cd Chat-App
 
 2. Create and activate a virtual environment
