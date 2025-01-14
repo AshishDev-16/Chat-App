@@ -26,32 +26,32 @@ A real-time chat application built with Django and WebSocket technology, allowin
 
 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/AshishDev-16/Chat-App.git
 
 cd Chat-App
-
+```
 2. Create and activate a virtual environment
 
-bash
+```bash
 python -m venv venv
 source venv/bin/activate
-
+```
 3. Install dependencies
 
-bash
+```bash
 pip install -r requirements.txt
-
+```
 4. Run migrations
 
-bash
+```bash
 python manage.py migrate
-
+```
 5. Start the development server
 
-bash
+```bash
 python manage.py runserver
-
+```
 6. Visit `http://127.0.0.1:8000` in your browser
 
 ## Usage
