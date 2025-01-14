@@ -1,8 +1,7 @@
-# NESZEN - Real-Time Chat Application
+# Real-Time Chat Application
 
-NESZEN is a real-time chat application built with Django and WebSocket technology, allowing users to communicate instantly in a modern and intuitive interface.
+A real-time chat application built with Django and WebSocket technology, allowing users to communicate instantly in a modern and intuitive interface.
 
-![Chat Interface](screenshot.png)
 
 ## Features
 
@@ -28,7 +27,7 @@ NESZEN is a real-time chat application built with Django and WebSocket technolog
 1. Clone the repository
 
 bash
-git clone https://github.com/AshishDev-16/Chat-App.git  
+git clone https://github.com/AshishDev-16/Chat-App.git
 cd Chat-App
 
 2. Create and activate a virtual environment
